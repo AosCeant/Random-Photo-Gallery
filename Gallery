@@ -56,6 +56,10 @@
             border-radius: 4px;
             margin-top: 10px;
             margin-bottom: 20px;
+            
+    /* Diğer stiller */
+    display: block;
+    margin: 0 auto;
         }
 
         .yenile:hover {
@@ -77,6 +81,8 @@
     </style>
 </head>
 <body>
+  
+                  
     <h1>AOSCEANT'S PHOTO GALLERY</h1>
     <button type="button" class="btn btn-success yenile" onclick="location.reload()">
         <i class="bi bi-arrow-clockwise"></i> Sayfayı yenile
@@ -128,7 +134,6 @@
                     const photoElement = document.getElementById(`photo${i}`);
                     photoElement.src = rasgelefoto();
 
-                    // Olay dinleyicilerini ekle
                     photoElement.addEventListener('mouseenter', function () {
                         photoElement.style.transform = 'scale(1.5)';
                     });
