@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rasgele Fotoğraf Atan Site 09.12.2023 </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ecf0f1; /* Hafiften gri arka plan */
+            margin: 0;
+            padding: 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #3498db; /* Mavili güzel bi ton */
+            border-radius: 8px;
+        }
+
+        th, td {
+            border: 1px solid #2980b9; /* Daha koyu bir mavi tonu */
+            text-align: left;
+            padding: 8px;
+        }
+
+        h1 {
+            background-color: #2980b9; /* Daha koyu bir mavi tonu */
+            color: #f1c40f; /* Sarı */
+            text-align: center;
+            font-family: "Times New Roman", Times, serif;
+            font-size: 24px;
+            margin: 0;
+            padding: 20px;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease-in-out;
+            border-radius: 8px;
+        }
+
+        img:hover {
+            transform: scale(1.2);
+        }
+
+        .yenile {
+            background-color: #2ecc71; /* Yeşil tonu */
+            color: #fff; /* Beyaz */
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        .yenile:hover {
+            background-color: #27ae60; /* Daha koyu yeşil tonu */
+        }
+
+        .alert {
+            background-color: #2ecc71; /* Yeşil tonu */
+            color: #000; /* Siyah */
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .bi {
+            font-size: 1.2rem;
+            vertical-align: text-bottom;
+        }
+    </style>
+</head>
+<body>
+    <h1>AOSCEANT'S PHOTO GALLERY</h1>
+    <button type="button" class="btn btn-success yenile" onclick="location.reload()">
+        <i class="bi bi-arrow-clockwise"></i> Sayfayı yenile
+    </button>
+    <div class="alert alert-success" role="alert">
+        <i class="bi bi-info-circle" style="color: black;"></i> 
+        Yeni fotoğraflar için  üstteki tuşa basarak sayfayı yenileyebilirsin!
+    </div>
+
+    <table id="photo-table">
+        <tbody>
+            <tr>
+                <td><img id="photo1"></td>
+                <td><img id="photo2"></td>
+                <td><img id="photo3"></td>
+            </tr>
+            <tr>
+                <td><img id="photo4"></td>
+                <td><img id="photo5"></td>
+                <td><img id="photo6"></td>
+            </tr>
+            <tr>
+                <td><img id="photo7"></td>
+                <td><img id="photo8"></td>
+                <td><img id="photo9"></td>
+            </tr>
+            <tr>
+                <td><img id="photo10"></td>
+                <td><img id="photo11"></td>
+                <td><img id="photo12"></td>
+            </tr>
+            <tr>
+                <td><img id="photo13"></td>
+                <td><img id="photo14"></td>
+                <td><img id="photo15"></td>
+
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            function rasgelefoto() {
+                return `https://source.unsplash.com/random/300x300?sig=${Math.random()}`;
+            }
+
+            function tabloguncelle() {
+                for (let i = 1; i <= 15; i++) {
+                    const photoElement = document.getElementById(`photo${i}`);
+                    photoElement.src = rasgelefoto();
+
+                    // Olay dinleyicilerini ekle
+                    photoElement.addEventListener('mouseenter', function () {
+                        photoElement.style.transform = 'scale(1.5)';
+                    });
+
+                    photoElement.addEventListener('mouseleave', function () {
+                        photoElement.style.transform = 'scale(1)';
+                    });
+                }
+            }
+
+            tabloguncelle();
+        });
+    </script>
+</body>
+</html>
